@@ -1,3 +1,8 @@
 node_modules
 npm-debug.log
 tmp
+test/dest
+tests.xml
+jslint.xml
+*.sublime-project
+*.sublime-workspace

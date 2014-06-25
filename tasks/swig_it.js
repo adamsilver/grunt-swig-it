@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 	var swig = require('swig');
 	var path = require('path');
 
-	grunt.registerMultiTask('swig', 'swig templater', function(tpl_context) {
+	grunt.registerMultiTask('swig_it', 'swig templater', function(tpl_context) {
 		var config = this;
 		var context = tpl_context || '';
 		var globalVars = {};

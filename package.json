@@ -1,42 +1,48 @@
 {
-  "name": "grunt-swig-it",
-  "description": "Create static HTML files using Swig",
-  "version": "0.0.1",
-  "homepage": "https://github.com/adamsilver/grunt-swig-it",
-  "author": {
-    "name": "Adam Silver",
-    "email": "adambsilver@gmail.com",
-    "url": "http://github.com/adamsilver/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/adamsilver/grunt-swig-it.git"
-  },
-  "bugs": {
-    "url": "https://github.com/adamsilver/grunt-swig-it/issues"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/adamsilver/grunt-swig-it/blob/master/LICENSE-MIT"
-    }
-  ],
-  "engines": {
-    "node": ">= 0.10.0"
-  },
-  "scripts": {
-    "test": "grunt test"
-  },
-  "devDependencies": {
-    "grunt-contrib-jshint": "^0.9.2",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-nodeunit": "^0.3.3",
-    "grunt": "~0.4.5"
-  },
-  "peerDependencies": {
-    "grunt": "0.4.5"
-  },
-  "keywords": [
-    "gruntplugin"
-  ]
+	"name": "grunt-swig-it",
+	"description": "Create static HTML files using Swig",
+	"version": "0.0.1",
+	"homepage": "https://github.com/adamsilver/grunt-swig-it",
+	"license": "MIT",
+	"author": {
+		"name": "Adam Silver",
+		"url": "http://github.com/adamsilver/"
+	},
+	"contributors": [
+		"Ryan Gibbons <rtgibbons23@gmail.com>"
+	],
+	"keywords": [
+		"grunt",
+		"swig",
+		"template"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/adamsilver/grunt-swig-it.git"
+	},
+	"bugs": {
+		"url": "https://github.com/adamsilver/grunt-swig-it/issues"
+	},
+	"licenses": [{
+		"type": "MIT",
+		"url": "https://github.com/adamsilver/grunt-swig-it/blob/master/LICENSE-MIT"
+	}],
+	"engines": {
+		"node": ">= 0.10.0"
+	},
+	"scripts": {
+		"test": "grunt test"
+	},
+	"dependencies": {
+		"swig": "~> 1.1.0"
+	},
+	"devDependencies": {
+		"grunt": "~0.4.1",
+		"grunt-contrib-clean": "~0.5.0",
+		"grunt-mocha-test": "~0.7.0",
+		"grunt-contrib-jshint": "~0.7.2"
+	},
+	"peerDependencies": {
+		"grunt": "~0.4.1"
+	}
 }

@@ -1,73 +1,55 @@
-/*
- * grunt-swig-it
- * https://github.com/adamsilver/grunt-swig-it
- *
- * Copyright (c) 2014 Adam Silver
- * Licensed under the MIT license.
- */
-
 'use strict';
 
 module.exports = function(grunt) {
+	grunt.loadTasks('tasks');
+	grunt.loadNpmTasks('grunt-mocha-test');
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 
-  // Project configuration.
-  grunt.initConfig({
-    jshint: {
-      all: [
-        'Gruntfile.js',
-        'tasks/*.js',
-        '<%= nodeunit.tests %>'
-      ],
-      options: {
-        jshintrc: '.jshintrc'
-      }
-    },
+	grunt.initConfig({
+		swig_it: {
+			development: {
+				init: {
+					allowErrors: false,
+					autoescape: true
+				},
+				test: {
+					var2: 'short path file'
+				},
+				dest: "test/dest",
+				src: ['test/fixtures/**/*.html']
+			}
+		},
+		jshint: {
+			options: {
+				'jshintrc': '.jshintrc',
+				'reporter': 'jslint',
+				'reporterOutput': 'jslint.xml',
+				'force': true
+			},
+			all: [
+				'Gruntfile.js',
+				'tasks/*.js'
+			]
+		},
+		mochaTest: {
+			options: {
+				reporter: 'xunit',
+				captureFile: 'tests.xml'
+			},
+			files: ['test/*_test.js']
+		},
+		clean: {
+			files: 'test/dest'
+		}
+	});
 
-    // Before generating any new files, remove any previously-created files.
-    clean: {
-      tests: ['tmp']
-    },
+	grunt.registerTask('test', [
+		'clean',
+		'swig_it',
+		'jshint',
+		'mochaTest',
+	]);
 
-    // Configuration to be run (and then tested).
-    swig_it: {
-      default_options: {
-        options: {
-        },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
-      },
-      custom_options: {
-        options: {
-          separator: ': ',
-          punctuation: ' !!!'
-        },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
-      }
-    },
-
-    // Unit tests.
-    nodeunit: {
-      tests: ['test/*_test.js']
-    }
-
-  });
-
-  // Actually load this plugin's task(s).
-  grunt.loadTasks('tasks');
-
-  // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-nodeunit');
-
-  // Whenever the "test" task is run, first clean the "tmp" dir, then run this
-  // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'swig_it', 'nodeunit']);
-
-  // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint', 'test']);
-
+	grunt.registerTask('default', 'test');
 };
