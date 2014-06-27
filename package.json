@@ -1,7 +1,7 @@
 {
 	"name": "grunt-swig-it",
 	"description": "Create static HTML files using Swig",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"homepage": "https://github.com/adamsilver/grunt-swig-it",
 	"license": "MIT",
 	"author": {
