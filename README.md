@@ -25,17 +25,21 @@ In your project's Gruntfile, add a section named `swig_it` to the data object pa
 ```js
 grunt.initConfig({
   swig_it: {
-    development: {
-        init: {
+    dev: {
+      options: {
+        swigDefaults: {
           allowErrors: false,
           autoescape: true
         },
-        test: {
-          var: 'short path file'
-        },
-        dest: "path/to/destination",
-        src: ['path/to/templates/**/*.html']
-      }
+        data: {
+          foo: {
+            bar: 'yeah'
+          }
+        }
+      },
+      src: ['test/fixtures/**/*.html'],
+      dest: "test/dest"
+    }
   }
 });
 ```

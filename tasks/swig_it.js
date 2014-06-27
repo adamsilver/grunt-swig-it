@@ -7,18 +7,19 @@ module.exports = function(grunt) {
 	var path = require('path');
 
 	grunt.registerMultiTask('swig_it', 'swig templater', function(tpl_context) {
+		var options = this.options();
 		var config = this;
 		var context = tpl_context || '';
 		var globalVars = {};
 
-		if (config.data.init !== undefined) {
-			swig.setDefaults(config.data.init);
+		if (options.swigDefaults) {
+			swig.setDefaults(options.swigDefaults);
 		}
 
 		try {
-			globalVars = grunt.util._.extend(config.data, grunt.file.readJSON(process.cwd() + '/global.json'));
+			globalVars = grunt.util._.extend(options.data, grunt.file.readJSON(process.cwd() + '/global.json'));
 		} catch (err) {
-			globalVars = grunt.util._.clone(config.data);
+			globalVars = grunt.util._.clone(options.data);
 		}
 
 		this.filesSrc.forEach(function(file) {
@@ -42,11 +43,11 @@ module.exports = function(grunt) {
 					tplVars = {};
 				}
 
-				try {
-					contextVars = grunt.file.readJSON(path.dirname(file) + '/' + outputFile + "." + context + ".json");
-				} catch (err) {
-					contextVars = {};
-				}
+				// try {
+				// 	contextVars = grunt.file.readJSON(path.dirname(file) + '/' + outputFile + "." + context + ".json");
+				// } catch (err) {
+				// 	contextVars = {};
+				// }
 
 				tplVars.context = context;
 				tplVars.tplFile = {

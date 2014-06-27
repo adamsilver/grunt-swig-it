@@ -8,16 +8,20 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 		swig_it: {
-			development: {
-				init: {
-					allowErrors: false,
-					autoescape: true
+			dev: {
+				options: {
+					swigDefaults: {
+						allowErrors: false,
+						autoescape: true
+					},
+					data: {
+						foo: {
+							bar: 'yeah'
+						}
+					}
 				},
-				test: {
-					var2: 'short path file'
-				},
-				dest: "test/dest",
-				src: ['test/fixtures/**/*.html']
+				src: ['test/fixtures/**/*.html'],
+				dest: "test/dest"
 			}
 		},
 		jshint: {
