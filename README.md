@@ -33,15 +33,21 @@ grunt.initConfig({
         test: {
           var: 'short path file'
         },
-        dest: "dest",
-        src: ['src/swig/**/*.html']
+        dest: "path/to/destination",
+        src: ['path/to/templates/**/*.html']
       }
   }
 });
 ```
 
+For each template found within src swig-it will look for a json file of the same name to use as data for the template.
+
+The src directory should not include layout files so store 'pages' in a different folder to 'layouts' for your convenience.
+
 ## Contributing
+
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
+
 _(Nothing yet)_
