@@ -34,20 +34,13 @@ module.exports = function(grunt) {
 					destPath = dirName.splice(1, dirName.length).join('/'),
 					outputFile = path.basename(file, '.html'),
 					htmlFile = config.data.dest + '/' + destPath + '/' + outputFile + '.html',
-					tplVars = {},
-					contextVars = {};
+					tplVars = {};
 
 				try {
 					tplVars = grunt.file.readJSON(path.dirname(file) + '/' + outputFile + ".json");
 				} catch (err) {
 					tplVars = {};
 				}
-
-				// try {
-				// 	contextVars = grunt.file.readJSON(path.dirname(file) + '/' + outputFile + "." + context + ".json");
-				// } catch (err) {
-				// 	contextVars = {};
-				// }
 
 				tplVars.context = context;
 				tplVars.tplFile = {
@@ -57,7 +50,7 @@ module.exports = function(grunt) {
 
 				grunt.log.writeln('Writing HTML to ' + htmlFile);
 
-				grunt.file.write(htmlFile, swig.renderFile(file, grunt.util._.extend(globalVars, tplVars, contextVars)));
+				grunt.file.write(htmlFile, swig.renderFile(file, grunt.util._.extend({}, globalVars, tplVars)));
 
 			}
 		});
