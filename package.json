@@ -1,48 +1,50 @@
 {
-	"name": "grunt-swig-it",
-	"description": "Create static HTML files using Swig",
-	"version": "0.0.4",
-	"homepage": "https://github.com/adamsilver/grunt-swig-it",
-	"license": "MIT",
-	"author": {
-		"name": "Adam Silver",
-		"url": "http://github.com/adamsilver/"
-	},
-	"contributors": [
-		"Ryan Gibbons <rtgibbons23@gmail.com>"
-	],
-	"keywords": [
-		"grunt",
-		"swig",
-		"template"
-	],
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/adamsilver/grunt-swig-it.git"
-	},
-	"bugs": {
-		"url": "https://github.com/adamsilver/grunt-swig-it/issues"
-	},
-	"licenses": [{
-		"type": "MIT",
-		"url": "https://github.com/adamsilver/grunt-swig-it/blob/master/LICENSE-MIT"
-	}],
-	"engines": {
-		"node": ">= 0.10.0"
-	},
-	"scripts": {
-		"test": "grunt test"
-	},
-	"dependencies": {
-		"swig": "~> 1.1.0"
-	},
-	"devDependencies": {
-		"grunt": "~0.4.1",
-		"grunt-contrib-clean": "~0.5.0",
-		"grunt-mocha-test": "~0.7.0",
-		"grunt-contrib-jshint": "~0.7.2"
-	},
-	"peerDependencies": {
-		"grunt": "~0.4.1"
-	}
+  "name": "grunt-swig-it",
+  "description": "Create static HTML files using Swig",
+  "version": "0.0.5",
+  "homepage": "https://github.com/adamsilver/grunt-swig-it",
+  "license": "MIT",
+  "author": {
+    "name": "Adam Silver",
+    "url": "http://github.com/adamsilver/"
+  },
+  "contributors": [
+    "Ryan Gibbons <rtgibbons23@gmail.com>"
+  ],
+  "keywords": [
+    "grunt",
+    "swig",
+    "template"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/adamsilver/grunt-swig-it.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adamsilver/grunt-swig-it/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/adamsilver/grunt-swig-it/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "swig": "~> 1.1.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-mocha-test": "~0.7.0",
+    "grunt-contrib-jshint": "~0.7.2"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  }
 }
