@@ -48,10 +48,8 @@ For each template found within src swig-it will look for a json file of the same
 
 The src directory should not include layout files so store 'pages' in a different folder to 'layouts' for your convenience.
 
+If you store data inside `global.json`, placed in the root, this will be merged with any 'data' that you put inside the swig_it config.
+
 ## Contributing
 
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-## Release History
-
-_(Nothing yet)_
